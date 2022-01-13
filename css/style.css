@@ -22,12 +22,6 @@ body {
   display: flex;
 }
 
-/* header {
-  position: fixed;
-  top: 0;
-  left: 0;
-} */
-
 nav {
   display: flex;
   flex-direction: column;
@@ -97,11 +91,14 @@ nav ul li a:hover {
   color: #4F6D9C;
 }
 
-section {
-  overflow: hidden;
+main {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
-#home {
+section {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -110,10 +107,12 @@ section {
   min-height: 100vh;
 }
 
-#home h1 {
+#home h1,
+#biography h1,
+#education h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 4vw;
-  background: linear-gradient(269.23deg, #4F9C69 0%, #4F6D9C 100%);
+  background: linear-gradient(-90deg, #4F9C69 0%, #4F6D9C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -136,16 +135,16 @@ section {
   box-shadow: var(--neo-shadow-ax);
 }
 
-#home div {
+.summary {
   margin: 32px 0;
   width: 64.5%;
 }
 
-#home div h3 {
+.summary h3 {
   color: #4F6D9C;
 }
 
-#home div p {
+.summary p {
   text-align: justify;
 }
 
@@ -170,11 +169,12 @@ section {
   box-shadow: var(--neo-shadow-ax);
 }
 
-#home span {
+section span {
   content: "";
   display: block;
   position: absolute;
   background-color: var(--primary-color);
+  box-shadow: var(--neo-shadow-a);
 }
 
 .spn1 {
@@ -185,7 +185,6 @@ section {
   border-radius: 0 0 200px 0;
   -moz-border-radius: 0 0 200px 0;
   -webkit-border-radius: 0 0 200px 0;
-  box-shadow: var(--neo-shadow-a);
 }
 
 .spn2 {
@@ -194,7 +193,22 @@ section {
   width: 60px;
   height: 120px;
   border-radius: 120px 0 0 120px;
-  box-shadow: var(--neo-shadow-a);
+}
+
+.spn3 {
+  top: -150px;
+  right: 0;
+  width: 150px;
+  height: 300px;
+  border-radius: 300px 0 0 300px;
+}
+
+.spn4 {
+  top: 20%;
+  left: 0;
+  width: 100px;
+  height: 200px;
+  border-radius: 0 200px 200px 0;
 }
 
 img[alt="trees-1"] {
@@ -209,4 +223,125 @@ img[alt="trees-2"] {
   bottom: 4%;
   right: 15%;
   width: 133px;
+}
+
+#biography ul {
+  display: flex;
+}
+
+#biography ul div li,
+#education ul li {
+  list-style: none;
+}
+
+#biography ul div:first-child li::after {
+  width: 280px;
+}
+
+#biography ul div:last-child li::after {
+  width: 480px;
+}
+
+#biography ul div:first-child li::after,
+#biography ul div:last-child li::after,
+#education ul li::after {
+  display: block;
+  height: 40px;
+  background-color: var(--primary-color);
+  box-shadow: var(--neo-shadow-ax);
+  text-align: center;
+  line-height: 40px;
+  border-radius: 20px;
+  margin: 8px 0 16px 0;
+  color: #ced6e380;
+}
+
+#education ul li::after {
+  display: inline-block;
+  width: 440px;
+}
+
+#education ul li:last-child:after {
+  height: 80px;
+}
+
+#biography ul div:first-child {
+  margin-right: 32px;
+}
+
+#biography ul div:first-child li:first-child::after {
+  content: "Rykhel Rafif Abdullah";
+}
+
+#biography ul div:first-child li:nth-child(2)::after {
+  content: "Jakarta, 19th October 2001";
+}
+
+#biography ul div:first-child li:nth-child(3)::after {
+  content: "+6285716156087";
+}
+
+#biography ul div:last-child li:first-child::after {
+  content: "Masjid Street 3 No. 123, RT 03/03, Cipayung, East Jakarta";
+}
+
+#biography ul div:last-child li:nth-child(2)::after {
+  content: "Hang out together";
+}
+
+#biography ul div:last-child li:nth-child(3)::after {
+  content: "\"Yang salah dibenerin, bukan disalahin\"";
+}
+
+#education ul li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+#education ul li::after {
+  margin: 0 0 0 32px;
+}
+
+#education ul li:first-child::after {
+  content: "Madrasah Ibtidaiyah State 16 Cipayung";
+}
+
+#education ul li:nth-child(2)::after {
+  content: "Junior High School State 222 Jakarta";
+}
+
+#education ul li:nth-child(3)::after {
+  content: "Senior High School State 105 Jakarta";
+}
+
+#education ul li:last-child::after {
+  content: "Jakarta State Polytechnic \a Diploma IV Road and Bridge Design Engineering";
+  white-space: pre-wrap;
+}
+
+img[alt="sakura-1"] {
+  position: absolute;
+  top: 2%;
+  left: -5%;
+}
+
+img[alt="sakura-2"] {
+  position: absolute;
+  bottom: 1%;
+  right: -5%;
+  transform: rotateY(180deg);
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ced6e380;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ced6e3aa;
 }
