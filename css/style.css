@@ -14,6 +14,12 @@
   padding: 0;
   box-sizing: border-box;
   color: var(--main-font-color);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -109,7 +115,8 @@ section {
 
 #home h1,
 #biography h1,
-#education h1 {
+#education h1,
+#resume h1 {
   font-family: 'Fredoka One', cursive;
   font-size: 4vw;
   background: linear-gradient(-90deg, #4F9C69 0%, #4F6D9C 100%);
@@ -117,22 +124,8 @@ section {
   -webkit-text-fill-color: transparent;
 }
 
-.more-btn {
-  font-family: var(--primary-font);
-  font-size: 16px;
-  width: 240px;
-  height: 40px;
-  background-color: var(--primary-color);
-  box-shadow: var(--neo-shadow-a);
-  border-radius: 20px;
-  border: none;
-  outline: none;
-  margin-top: 16px;
-}
-
-.more-btn:hover {
-  color: #4F6D9C;
-  box-shadow: var(--neo-shadow-ax);
+#home h3:nth-child(2) {
+  margin-bottom: 32px;
 }
 
 .summary {
@@ -211,6 +204,32 @@ section span {
   border-radius: 0 200px 200px 0;
 }
 
+.spn5 {
+  bottom: -65px;
+  right: 35%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+
+.spn6 {
+  bottom: 0;
+  right: 0;
+  width: 160px;
+  height: 160px;
+  border-radius: 160px 0 0 0;
+  -moz-border-radius: 160px 0 0 0;
+  -webkit-border-radius: 160px 0 0 0;
+}
+
+.spn7 {
+  top: -150px;
+  left: 0;
+  width: 150px;
+  height: 300px;
+  border-radius: 0 300px 300px 0;
+}
+
 img[alt="trees-1"] {
   position: absolute;
   bottom: 3%;
@@ -274,28 +293,29 @@ img[alt="trees-2"] {
 }
 
 #biography ul div:first-child li:nth-child(2)::after {
-  content: "Jakarta, 19th October 2001";
+  content: "Jakarta, 19 Oktober 2001";
 }
 
 #biography ul div:first-child li:nth-child(3)::after {
-  content: "+6285716156087";
+  content: "+62 85716156087";
 }
 
 #biography ul div:last-child li:first-child::after {
-  content: "Masjid Street 3 No. 123, RT 03/03, Cipayung, East Jakarta";
+  content: "Jl. Masjid 3 No. 123, RT 03/03, Cipayung, Jakarta Timur";
 }
 
 #biography ul div:last-child li:nth-child(2)::after {
-  content: "Hang out together";
+  content: "Nongkrong";
 }
 
 #biography ul div:last-child li:nth-child(3)::after {
-  content: "\"Yang salah dibenerin, bukan disalahin\"";
+  content: "Yang salah dibenerin, bukan disalahin";
 }
 
 #education ul li {
   margin-bottom: 12px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -304,19 +324,19 @@ img[alt="trees-2"] {
 }
 
 #education ul li:first-child::after {
-  content: "Madrasah Ibtidaiyah State 16 Cipayung";
+  content: "Madrasah Ibtidaiyah Negeri 16 Cipayung";
 }
 
 #education ul li:nth-child(2)::after {
-  content: "Junior High School State 222 Jakarta";
+  content: "Sekolah Menengah Pertama Negeri 222 Jakarta";
 }
 
 #education ul li:nth-child(3)::after {
-  content: "Senior High School State 105 Jakarta";
+  content: "Sekolah Menengah Atas Negeri 105 Jakarta";
 }
 
 #education ul li:last-child::after {
-  content: "Jakarta State Polytechnic \a Diploma IV Road and Bridge Design Engineering";
+  content: "Politeknik Negeri Jakarta \a D4 Teknik Perancangan Jalan dan Jembatan";
   white-space: pre-wrap;
 }
 
@@ -330,7 +350,12 @@ img[alt="sakura-2"] {
   position: absolute;
   bottom: 1%;
   right: -5%;
-  transform: rotateY(180deg);
+}
+
+#resume .summary p:nth-child(2),
+#resume .summary p:nth-child(3),
+#resume .summary p:nth-child(4) {
+  margin-bottom: 10px;
 }
 
 ::-webkit-scrollbar {
